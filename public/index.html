@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-app="Todo">
+<div class="container" ng-controller="TodoCtrl">
+    <div class="text-center">
+        <h1>
+            Todo List App
+        </h1>
+        <p class="lead">
+            Create, Update, and delete your todo
+        </p>
+    </div>
+    <table class="table table-stripped">
+        <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date created</th>
+        <td>Actions</td>
+        </thead>
+
+        <tbody>
+        <form action="">
+            <tr>
+                <td><input type="text" ng-model="todo.title" class="form-control"></td>
+                <td><input name="" id="" ng-model="todo.description"></td>
+                <td>
+                    <button class="btn btn-primary" ng-click="createTodo()">Create Todo</button>
+                </td>
+                 <td>
+                    <button class="btn btn-primary" ng-click="updateTodo()">Update Todo</button>
+                </td>
+            </tr>
+        </form>
+        <tr ng-repeat="todo in todos">
+            <td>{{todo.title}}</td>
+            <td>{{todo.description}}</td>
+            <td>{{todo.dateCreated}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="deleteTodo(todo)">Delete</button>
+            </td>
+            <td>
+                <button class="btn btn-warn" ng-click="edit(todo._id)">Edit</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-resource.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/todo-service.js"></script>
+<script src="javascripts/controllers.js"></script>
+</body>
+
+</html>
